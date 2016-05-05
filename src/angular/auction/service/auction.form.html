@@ -1,0 +1,52 @@
+<md-dialog class="auction-creation-form"  layout-padding
+           aria-label="">
+    <md-dialog-title>
+        <h2 class="md-headline" translate="AUCTION_CREATION"></h2>
+    </md-dialog-title>
+    <md-divider></md-divider>
+
+    <md-dialog-content>
+        <div class="auction-item" flex layout="column" layout-align="center center">
+            <img class="md-avatar" ng-src="icons/{{ item.icon }}.svg" />
+            <span class="auction-item-name">
+                {{ item.name }} <i>({{ item.quantity }})</i>
+            </span>
+        </div>
+        <form name="auctionForm" flex>
+            <md-input-container flex>
+                <label translate="AUCTION_CREATION_QUANTITY"></label>
+                <input name="quantity" type="number"
+                       ng-model="quantity"
+                       required min="1" max="{{ item.quantity }}" />
+                <div ng-messages="auctionForm.quantity.$error" multiple md-auto-hide="false">
+                    <div ng-message="min" translate="AUCTION_CREATION_QUANTITY_REQUIRED"></div>
+                    <div ng-message="max" translate="AUCTION_CREATION_QUANTITY_OVER_MAXIMUM"></div>
+                    <div ng-message="required" translate="AUCTION_CREATION_QUANTITY_REQUIRED"></div>
+                </div>
+            </md-input-container>
+            <md-input-container flex>
+                <label translate="AUCTION_CREATION_INITIAL_BID"></label>
+                <input name="initialBid" type="number"
+                       ng-model="initialBid"
+                       required min="1" />
+                <div ng-messages="auctionForm.initialBid.$error" multiple md-auto-hide="false">
+                    <div ng-message="min" translate="AUCTION_CREATION_INITIAL_BID_REQUIRED"></div>
+                    <div ng-message="required" translate="AUCTION_CREATION_INITIAL_BID_REQUIRED"></div>
+                </div>
+            </md-input-container>
+        </form>
+    </md-dialog-content>
+
+    <md-dialog-actions ng-if="!promise">
+        <md-button ng-click="confirm()"
+                   ng-disabled="auctionForm.$invalid"
+                   class="md-primary"
+                   translate="AUCTION_CREATION_CONFIRM"></md-button>
+        <md-button ng-click="closeDialog()" class="md-warn" translate="AUCTION_CREATION_CANCEL"></md-button>
+    </md-dialog-actions>
+
+    <md-dialog-actions ng-if="promise">
+        <coa-progress promise="promise" retry="confirm()"></coa-progress>
+    </md-dialog-actions>
+
+</md-dialog>

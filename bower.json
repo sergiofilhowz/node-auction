@@ -1,0 +1,30 @@
+{
+  "name": "auction",
+  "version": "1.0.0",
+  "homepage": "",
+  "authors": [
+    "Sérgio Marcelino <sergiofilhow@gmail.com>"
+  ],
+  "description": "Auction - Application",
+  "license": "MIT",
+  "ignore": [
+    "gulpfile.js",
+    "karma.conf.js",
+    "src/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-material": "~1.0.1",
+    "angular-material-icons": "~0.6.0",
+    "angular-translate": "^2.11.0",
+    "angular-translate-loader-static-files": "^2.11.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.8"
+  },
+  "resolutions": {
+    "angular": "~1.5.0"
+  }
+}

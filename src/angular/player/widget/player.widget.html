@@ -1,0 +1,23 @@
+<md-card class="player-widget">
+    <md-card-title layout="row" layout-align="center center">
+        <md-card-title-text>
+            <span class="md-headline" translate="AUCTION_PLAYER_STATS"></span>
+        </md-card-title-text>
+        <md-button ng-click="$ctrl.logout()" aria-label="{{ 'AUCTION_PLAYER_LOGOUT' | translate }}">
+            <md-tooltip>{{ 'AUCTION_PLAYER_LOGOUT' | translate }}</md-tooltip>
+            <ng-md-icon icon="logout"></ng-md-icon>
+        </md-button>
+    </md-card-title>
+    <md-divider></md-divider>
+    <md-card-content layout-padding layout="column">
+        <coa-progress promise="$ctrl.promise" retry="$ctrl.retry()"></coa-progress>
+        <div class="player-name" ng-if="$ctrl.playerName">
+            <label translate="AUCTION_PLAYER_STATS_NAME"></label>:
+            <span ng-bind="$ctrl.playerName"></span>
+        </div>
+        <div class="player-coins" ng-if="$ctrl.playerCoins !== undefined">
+            <label translate="AUCTION_PLAYER_STATS_COINS"></label>:
+            <span ng-bind="$ctrl.playerCoins"></span>
+        </div>
+    </md-card-content>
+</md-card>

@@ -1,0 +1,12 @@
+<md-card class="inventory-widget">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline" translate="AUCTION_INVENTORY"></span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-divider></md-divider>
+    <md-card-content flex>
+        <coa-progress promise="$ctrl.promise" retry="$ctrl.retry()"></coa-progress>
+        <md-list flex ng-transclude></md-list>
+    </md-card-content>
+</md-card>

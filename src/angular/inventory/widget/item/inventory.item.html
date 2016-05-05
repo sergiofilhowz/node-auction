@@ -1,0 +1,17 @@
+<md-list-item layout="row" class="inventory-item">
+    <div layout="column" flex="33">
+        <img class="md-avatar" ng-src="icons/{{ $ctrl.itemIcon }}.svg" />
+        <span class="inventory-item-name" ng-bind="$ctrl.itemName"></span>
+    </div>
+    <div layout="column" flex="33" layout-fill>
+        <label translate="AUCTION_INVENTORY_QUANTITY"></label>
+        <span class="inventory-item-quantity" ng-bind="$ctrl.itemQuantity"></span>
+    </div>
+    <div layout="column" flex="33">
+        <img class="megaphone" src="icons/megaphone.png" />
+        <md-button class="md-raised md-primary"
+                   ng-click="$ctrl.itemClick()"
+                   aria-label="{{ 'AUCTION_INVENTORY_AUCTION' | translate }}"
+                   translate="AUCTION_INVENTORY_AUCTION"></md-button>
+    </div>
+</md-list-item>

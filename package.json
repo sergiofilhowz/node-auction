@@ -1,0 +1,51 @@
+{
+  "name": "node-auction",
+  "version": "1.0.0",
+  "description": "Node Auction - Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./src/node/test",
+    "cover": "istanbul cover _mocha -- src/node/test -R spec",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "example",
+    "auction"
+  ],
+  "author": "Sergio Marcelino <sergiofilhow@gmail.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "acqua": "0.0.5",
+    "body-parser": "^1.15.0",
+    "config": "^1.19.0",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^5.7.0",
+    "lodash": "^4.6.1",
+    "mysql": "^2.10.2",
+    "saphyre-data": "^1.0.2",
+    "sequelize": "^3.20.0",
+    "socket.io": "^1.4.5"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.0",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "jasmine": "^2.4.1",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.6",
+    "karma-junit-reporter": "^0.3.8",
+    "karma-ng-html2js-preprocessor": "^0.2.0",
+    "merge-stream": "^1.0.0",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
+    "wiredep": "^3.0.0"
+  }
+}

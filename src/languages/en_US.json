@@ -1,0 +1,49 @@
+{
+  "AUCTION_UNKNOWN_ERROR": "Internal Server Error",
+
+  "AUCTION_LOGIN": "Login",
+  "AUCTION_LOGIN_USERNAME": "Type your name here",
+  "AUCTION_LOGIN_USERNAME_REQUIRED": "This field is required",
+  "AUCTION_LOGIN_CONFIRM": "Enter",
+
+  "AUCTION_PLAYER_STATS": "Player Stats",
+  "AUCTION_PLAYER_STATS_NAME": "Name",
+  "AUCTION_PLAYER_STATS_COINS": "Coins",
+  "AUCTION_PLAYER_LOGOUT": "Log out",
+
+  "AUCTION_INVENTORY": "Inventory",
+  "AUCTION_INVENTORY_QUANTITY": "Quantity",
+  "AUCTION_INVENTORY_AUCTION": "Auction",
+
+  "AUCTION_CREATION": "Create auction",
+  "AUCTION_CREATION_CONFIRM": "Confirm",
+  "AUCTION_CREATION_CANCEL": "Cancel",
+  "AUCTION_CREATION_QUANTITY": "Quantity",
+  "AUCTION_CREATION_QUANTITY_REQUIRED": "The value must be filled and greater than 0",
+  "AUCTION_CREATION_QUANTITY_OVER_MAXIMUM": "You don't have enough items",
+  "AUCTION_CREATION_INITIAL_BID": "Initial bid",
+  "AUCTION_CREATION_INITIAL_BID_REQUIRED": "The value must be filled and greater than 0",
+
+  "AUCTION_WIDGET_AUCTION": "Current Auction",
+  "AUCTION_WIDGET_AUCTION_NONE": "No auction at the moment",
+  "AUCTION_WIDGET_AUCTION_SELLER": "Seller",
+  "AUCTION_WIDGET_AUCTION_QUANTITY": "Quantity",
+  "AUCTION_WIDGET_AUCTION_TIME_LEFT": "Time Left",
+  "AUCTION_WIDGET_AUCTION_TIME_LEFT_SECONDS": "seconds",
+  "AUCTION_WIDGET_AUCTION_INITIAL_BID": "Initial bid",
+  "AUCTION_WIDGET_AUCTION_WINNING_BID": "Winning bid",
+  "AUCTION_WIDGET_AUCTION_PLACE_BID": "Place bid",
+  "AUCTION_WIDGET_AUCTION_BID_VALUE": "Bid value",
+  "AUCTION_WIDGET_AUCTION_BID_ERROR_MIN": "You can't place a bid with value lesser than {{ min }}",
+  "AUCTION_WIDGET_AUCTION_SELF": "This is your auction",
+  "AUCTION_WON": "You won the auction!",
+
+  "AUCTION_ERROR_CREATE_AUCTION_NO_ITEM": "You don't have the item you're trying to create the auction",
+  "AUCTION_ERROR_CREATE_AUCTION_INSUFFICIENT_ITEM_QTT": "You don't have enough item quantity to create this auction",
+  "AUCTION_ERROR_CREATE_AUCTION_ANOTHER_ACTIVE": "There's currently an auction active",
+
+  "AUCTION_ERROR_PLACE_BID_AUCTION_NOT_FOUND": "Auction not found or already finished",
+  "AUCTION_ERROR_PLACE_BID_OWN_AUCTION": "You can't place a bid on your own auction",
+  "AUCTION_ERROR_PLACE_BID_LESSER_INITIAL_BID": "The value selected is lesser than initial bid",
+  "AUCTION_ERROR_PLACE_BID_LESSER_WINNING_BID": "The value selected is lesser than or equal to current bid"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="218px" height="202px" viewBox="0 0 218 202" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12005) - http://www.bohemiancoding.com/sketch -->
+    <title>DIamond</title>
+    <desc>Created with Sketch - Author: luannazevedo2@gmail.com</desc>
+    <defs>
+        <ellipse id="path-1" cx="109" cy="101" rx="109" ry="101"></ellipse>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="DIamond" sketch:type="MSLayerGroup">
+            <mask id="mask-2" sketch:name="Mask" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#F3BAE5" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+            <g id="Diamond" mask="url(#mask-2)" sketch:type="MSShapeGroup">
+                <g transform="translate(34.500000, 47.000000)">
+                    <path d="M0.378510898,33.2273542 L38.663018,33.2273542 L73.6327808,107.953372 L0.378510898,33.2273542 Z" id="Path-6" fill="#5BE4E7"></path>
+                    <path d="M38.6579827,33.2126793 L109.376426,33.2126793 L73.5979856,107.958898 L38.6579827,33.2126793 Z" id="Path-7" fill="#33C7CB"></path>
+                    <path d="M109.172475,33.0006716 L148.520391,33.0006716 L73.5996217,107.902606 L109.172475,33.0006716 Z" id="Path-8" fill="#20A7AB"></path>
+                    <path d="M0.299459828,33.2473677 L32.0470927,0.794245512 L39.1321183,33.6949912 L0.299459828,33.2473677 Z" id="Path-9" fill="#9DF1F3"></path>
+                    <path d="M32.0182278,0.787737771 C32.0182278,0.787737771 32.5756148,0.785465921 32.8543084,0.784329997 C46.3418239,0.729356341 73.5241305,0.607975526 73.5241305,0.607975526 L39.1277396,33.7132529 L32.0182278,0.787737771 Z" id="Path-10" fill="#2BB7BD"></path>
+                    <path d="M73.5868929,0.53097853 L108.997784,33.1982095 L39.0965893,33.5844287 L73.5868929,0.53097853 Z" id="Path-11" fill="#50CDD1"></path>
+                    <path d="M73.6349741,0.586905025 L115.932326,0.586905025 L108.83022,33.332593 L73.6349741,0.586905025 Z" id="Path-12" fill="#20A6AB"></path>
+                    <path d="M115.925833,0.612639394 L148.476178,32.9851681 L108.865016,33.1965713 L115.925833,0.612639394 Z" id="Path-13" fill="#87F4F8"></path>
+                    <path d="M109.168228,35.5907409 L106.558062,39.0207043 L106.382997,34.8375911 L102.831492,32.476358 L107.485779,32.636139 L109.812976,28.7092449 L110.180064,32.7887454 L113.539546,35.2535912 L109.168228,35.5907409 L109.168228,35.5907409 Z" id="Star-1" fill="#FBF8FB"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

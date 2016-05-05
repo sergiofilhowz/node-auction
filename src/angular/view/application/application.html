@@ -1,0 +1,58 @@
+<md-content layout-fill ng-controller="ApplicationController as vm">
+    <div ng-if="vm.hasSession()" layout-fill layout-padding layout="column" layout-gt-sm="row" ng-init="vm.init()">
+        <coa-player-widget ng-init="vm.getPlayerStats()"
+                           promise="vm.playerStatsPromise"
+                           retry="vm.getPlayerStats()"
+                           flex-xs="100" flex-gt-sm="33"
+                           player-name="vm.player.name"
+                           player-coins="vm.player.coins"
+                           logout="vm.logout()"></coa-player-widget>
+        <coa-inventory-widget ng-init="vm.getPlayerInventory()"
+                              promise="vm.inventoryPromise"
+                              retry="vm.getPlayerInventory()"
+                              flex-xs="100" flex-gt-sm="33">
+            <coa-inventory-item ng-repeat="item in vm.inventory"
+                                item-name="item.name"
+                                item-quantity="item.quantity"
+                                item-icon="item.icon"
+                                item-click="vm.createAuction(item)"></coa-inventory-item>
+        </coa-inventory-widget>
+        <coa-auction-widget ng-init="vm.getActiveAuction()"
+                            promise="vm.auctionPromise"
+                            retry="vm.getActiveAuction()"
+                            place-bid="vm.placeBid(bidValue, auction)"
+                            flex-xs="100" flex-gt-sm="33"
+                            auction="vm.auction"
+                            player-id="vm.player.id"></coa-auction-widget>
+    </div>
+    <div ng-if="!vm.hasSession()" layout-align="center center" layout="row">
+        <md-card flex-gt-sm="30" flex-sm="100" flex-xs="100">
+            <md-card-title>
+                <span translate="AUCTION_LOGIN"></span>
+            </md-card-title>
+            <md-divider></md-divider>
+            <md-card-content>
+                <form name="loginForm" layout="column"
+                      layout-align="center center">
+                    <md-input-container>
+                        <label translate="AUCTION_LOGIN_USERNAME"></label>
+                        <input name="name" type="text"
+                               ng-model="name"
+                               ng-disabled="vm.loginPromise"
+                               required />
+                        <div ng-messages="loginForm.name.$error" multiple md-auto-hide="false">
+                            <div ng-message="required" translate="AUCTION_LOGIN_USERNAME_REQUIRED"></div>
+                        </div>
+                    </md-input-container>
+                    <coa-progress promise="vm.loginPromise" retry="vm.login(name)"></coa-progress>
+                    <md-button ng-if="!vm.loginPromise"
+                               ng-click="vm.login(name)"
+                               class="md-raised md-primary"
+                               ng-disabled="loginForm.$invalid">
+                        <span translate="AUCTION_LOGIN_CONFIRM"></span>
+                    </md-button>
+                </form>
+            </md-card-content>
+        </md-card>
+    </div>
+</md-content>

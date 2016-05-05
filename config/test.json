@@ -1,0 +1,14 @@
+{
+  "secret": "shhhh",
+  "database": {
+    "name": "auction-test",
+    "username" : "root",
+    "password" : "root",
+    "socketPath": "/Applications/MAMP/tmp/mysql/mysql.sock",
+    "pool": {
+      "maxConnections": 5,
+      "maxIdleTime": 30
+    },
+    "logging": false
+  }
+}

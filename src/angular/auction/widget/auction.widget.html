@@ -1,0 +1,74 @@
+<md-card class="auction-widget">
+    <md-card-title layout="row" layout-align="center center">
+        <md-card-title-text>
+            <span class="md-headline"
+                  translate="AUCTION_WIDGET_AUCTION"></span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-divider></md-divider>
+
+    <md-card-content layout-padding layout="column" ng-if="!$ctrl.auction" layout-align="center center">
+        <span ng-if="$ctrl.promise.$$state != 0"
+              class="md-subheader" translate="AUCTION_WIDGET_AUCTION_NONE"></span>
+        <coa-progress promise="$ctrl.promise" retry="$ctrl.retry()"></coa-progress>
+    </md-card-content>
+
+    <md-progress-linear md-mode="determinate" ng-if="$ctrl.auction"
+                        value="{{ $ctrl.auction.timeLeft / $ctrl.auction.originalTimeLeft * 100 }}"></md-progress-linear>
+    <md-card-content layout-padding layout="column" ng-if="$ctrl.auction">
+        <div class="labeled seller-name" layout="row">
+            <label translate="AUCTION_WIDGET_AUCTION_SELLER"></label>
+            <span ng-bind="$ctrl.auction.seller.name"></span>
+        </div>
+        <div class="auction-item" layout="row">
+            <div layout="column" flex>
+                <img class="md-avatar" ng-src="icons/{{ $ctrl.auction.item.icon }}.svg" />
+                <span class="auction-item-name" ng-bind="$ctrl.auction.item.name"></span>
+            </div>
+            <div class="vertical-labeled" layout="column" flex>
+                <label translate="AUCTION_WIDGET_AUCTION_QUANTITY"></label>
+                <span class="auction-item-quantity" ng-bind="$ctrl.auction.item.quantity"></span>
+            </div>
+        </div>
+        <div class="labeled" layout="row" flex>
+            <label translate="AUCTION_WIDGET_AUCTION_TIME_LEFT"></label>
+            <span class="auction-time-left" ng-bind="$ctrl.auction.timeLeft"></span>
+            &nbsp;
+            <span class="auction-time-left-seconds" translate="AUCTION_WIDGET_AUCTION_TIME_LEFT_SECONDS"></span>
+        </div>
+        <div class="labeled" layout="row" flex ng-if="$ctrl.auction.winningBid">
+            <label translate="AUCTION_WIDGET_AUCTION_WINNING_BID"></label>
+            <span class="inventory-item-quantity" ng-bind="$ctrl.auction.winningBid"></span>
+        </div>
+        <div class="labeled" layout="row" flex ng-if="!$ctrl.auction.winningBid">
+            <label translate="AUCTION_WIDGET_AUCTION_INITIAL_BID"></label>
+            <span class="inventory-item-quantity" ng-bind="$ctrl.auction.initialBid"></span>
+        </div>
+        <div class="bid-form" flex>
+            <h2 ng-if="$ctrl.playerId == $ctrl.auction.seller.id"
+                translate="AUCTION_WIDGET_AUCTION_SELF"></h2>
+            <coa-progress promise="$ctrl.bidPromise" retry="$ctrl.confirm($ctrl.bidValue)"></coa-progress>
+            <form name="bidForm" layout="row"
+                  layout-align="center center"
+                  ng-if="$ctrl.playerId != $ctrl.auction.seller.id && (!$ctrl.bidPromise || $ctrl.bidPromise.$$state.status == 1)">
+                <md-input-container>
+                    <label translate="AUCTION_WIDGET_AUCTION_BID_VALUE"></label>
+                    <input name="bidValue" type="number"
+                           ng-model="$ctrl.bidValue"
+                           min="{{ $ctrl.auction.winningBid ? $ctrl.auction.winningBid + 1 : $ctrl.auction.initialBid }}" />
+                    <div ng-messages="bidForm.bidValue.$error" multiple md-auto-hide="false">
+                        <div ng-message="min"
+                             translate="AUCTION_WIDGET_AUCTION_BID_ERROR_MIN"
+                             translate-values="{ min : $ctrl.auction.initialBid }"></div>
+                    </div>
+                </md-input-container>
+                <md-button class="md-raised md-primary"
+                           ng-click="$ctrl.confirm($ctrl.bidValue)"
+                           ng-disabled="!$ctrl.bidValue || bidForm.bidValue.$error.min">
+                    <ng-md-icon icon="attach_money"></ng-md-icon>
+                    <span translate="AUCTION_WIDGET_AUCTION_PLACE_BID"></span>
+                </md-button>
+            </form>
+        </div>
+    </md-card-content>
+</md-card>
